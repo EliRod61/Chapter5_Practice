@@ -11,10 +11,10 @@ public class LearningCurve : MonoBehaviour
     {
         //var hero = new Character();
         Character hero = new Character();
-        Debug.LogFormat("Hero: {0} - {1} EXP", hero.name, hero.exp);
+        hero.PrintStatsInfo();
 
         Character heroine = new Character("Agatha");
-        Debug.LogFormat("Hero: {0} - {1} EXP", heroine.name,heroine.exp);
+        heroine.PrintStatsInfo();
 
         ComputeAge();
     }
