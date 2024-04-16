@@ -11,8 +11,10 @@ public class Character
     {
         name = "Not assigned";
     }
+    //2nd Constructor
     public Character(string name)
     {
         this.name = name;
     }
+    
 }

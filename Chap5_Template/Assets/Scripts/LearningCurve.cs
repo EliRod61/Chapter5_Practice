@@ -9,10 +9,13 @@ public class LearningCurve : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Character hero = new Character();
         //var hero = new Character();
+        Character hero = new Character();
         Debug.LogFormat("Hero: {0} - {1} EXP", hero.name, hero.exp);
-        //Debug.Log(CurrentAge+ 1);
+
+        Character heroine = new Character("Agatha");
+        Debug.LogFormat("Hero: {0} - {1} EXP", heroine.name,heroine.exp);
+
         ComputeAge();
     }
     /// <summary>
@@ -29,6 +32,6 @@ public class LearningCurve : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //This class is fun
+
     }
 }
