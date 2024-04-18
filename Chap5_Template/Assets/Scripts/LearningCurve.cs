@@ -8,13 +8,17 @@ public class LearningCurve : MonoBehaviour
 {
     public int CurrentAge = 30;
     public int addedAge = 1;
+    public Transform CamTransform;
+    public GameObject DirectionLight;
+    public Transform LightTransform;
     // Start is called before the first frame update
     void Start()
     {
         //var hero = new Character();
         Character hero = new Character();
         hero.PrintStatsInfo();
- 
+        //hero.Reset();
+
         Character villain = hero;
         villain.name = "Sir Kane the Bold";
         villain.PrintStatsInfo();
@@ -42,11 +46,18 @@ public class LearningCurve : MonoBehaviour
          * warBow will print a different sentence with different values compared to huntingBow
          */
 
-        ComputeAge();
+        Paladin knight = new Paladin("Sir Arthur", huntingBow);
+        knight.PrintStatsInfo();
+
+        CamTransform = this.GetComponent<Transform>();
+        Debug.Log(CamTransform.localPosition);
+
+        //DirectionLight = GameObject.Find("Directional Light");
+        LightTransform = DirectionLight.GetComponent<Transform>();
+        Debug.Log(LightTransform.localPosition);
+
+        //ComputeAge();
     }
-    /// <summary>
-    /// We add up 2 numbers and print them to the console.
-    /// </summary>
     void ComputeAge()
     {
         Debug.Log(CurrentAge + addedAge);

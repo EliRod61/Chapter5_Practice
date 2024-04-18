@@ -10,6 +10,7 @@ public class Character
     public Character()
     {
         name = "Not assigned";
+        Reset();
     }
     //2nd Constructor
     public Character(string name)
@@ -17,8 +18,32 @@ public class Character
         this.name = name;
     }
     //Method
-    public void PrintStatsInfo()
+    public virtual void PrintStatsInfo()
     {
         Debug.LogFormat("Hero: {0} - {1} EXP", this.name, this.exp);
+
     }
+    //private method
+    private void Reset()
+    {
+        this.name = "Not assigned";
+        this.exp = 0;
+    }
+}
+//Child Class of Character
+public class Paladin: Character
+{
+    //Classes can be composed of other classes
+    public Weapon weapon;
+
+    //Constructor
+    public Paladin(string name, Weapon weapon): base(name)
+    {
+        this.weapon = weapon;
+    }
+    public override void PrintStatsInfo()
+    {
+        Debug.LogFormat("Hail {0} - take up your {1}!",this.name,this.weapon.name);
+    }
+
 }
